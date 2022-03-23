@@ -31,7 +31,7 @@
  *   https://developers.google.com/apps-script/content_service
  */
 function doGet() {
-  var rssItems = formatGmailThreads(GmailApp.getInboxThreads());
+  var rssItems = formatGmailThreads(GmailApp.getInboxThreads(0, 50));
   var rssChannel = formatRssChannel(
     'Gmail (' + Session.getUser().getEmail() + ')',
     'https://mail.google.com/',
